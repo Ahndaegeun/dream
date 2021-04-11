@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinates</title>
+  <style>
+    html,body {
+      padding: 0;
+      margin: 0;
+    }
+    .body__container {
+      background: #000;
+      padding: 3px;
+    }
+    .box {
+      background: sandybrown;
+      width: 300px;
+      height: 300px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .custom {
+      background: yellowgreen;
+    }
+    .btn-group {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="body__container">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box custom"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="btn-group">
+    <button type="button" class="btn">Scroll by 100px(y)</button>
+    <button type="button" class="btn">Scroll to 100px(y)</button>
+    <button type="button" class="btn">Scroll into Custom</button>
+  </div>
+</div>
+<script>
+const _box = document.querySelector('.custom');
+const _btn = document.querySelectorAll('.btn');
+const _boxRect = _box.getBoundingClientRect();
+//const _bodyRect = document.body.getBoundingClientRect();
+
+_box.addEventListener('click', e => {
+  console.log(_boxRect);
+  console.log(`client : ${e.clientX}, ${e.clientY}`)
+  console.log(`page : ${e.pageX}, ${e.pageY}`)
+})
+
+_btn[0].addEventListener('click', (e) => {
+  //scrollTo(0, e.pageY + 100);
+  scrollBy(0, 100)
+  //ㄴ 위의 코드 추가 사항
+  //scrollBy({top: 100, left: 0, behavior: smooth});
+  //object type option setting is possible
+});
+_btn[1].addEventListener('click', (e) => {
+  scrollTo(0, 100);
+});
+_btn[2].addEventListener('click', (e) => {
+  //scrollTo(0, _boxRect.top - _bodyRect.top)
+  _box.scrollIntoView();
+});
+
+
+//주석은 내가 짠 코드
+
+</script>
+</body>
+</html>

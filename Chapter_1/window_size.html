@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widnow Size</title>
+  <style>
+    .box {
+      display: inline-block;
+      background: royalblue;
+      padding: 20px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>window.screen: <span class="screen"></span></h2>
+    <h2>window.outer: <span class="outer"></span></h2>
+    <h2>window.inner: <span class="inner"></span></h2>
+    <h2>document.Element.clientWidth: <span class="client"></span></h2>
+  </div>
+
+
+<script>
+const _screen = document.querySelector('.screen');
+const _outer = document.querySelector('.outer');
+const _inner = document.querySelector('.inner');
+const _client = document.querySelector('.client');
+
+const updateTag = function () {
+  _screen.innerHTML = `${window.screen.width}, ${window.screen.height}`;
+  _outer.innerHTML = `${window.outerWidth}, ${window.outerHeight}`;
+  _inner.innerHTML = `${window.innerWidth}, ${window.innerHeight}`;
+  _client.innerHTML = `${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}`;
+}
+
+window.addEventListener('resize', () => {updateTag()})
+updateTag();
+
+</script>
+</body>
+</html>
