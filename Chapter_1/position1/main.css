@@ -10,11 +10,22 @@ html, body {
   position: relative;
 }
 
-.target {
+.target__wrapper {
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.target {
+  transform: translate(0.5%, 2%);
+}
+
+.sign {
+  width: 200px;
+  color: #fff;
+  font-size: 28px;
+  position: absolute;
+  bottom: 0;
+  left: 100px;
 }
 
 .horizontal-line {
@@ -22,7 +33,7 @@ html, body {
   height: 1px;
   position: absolute;
   background: #fff;
-  top: 50%;
+  top: 0;
   left: 0;
 }
 
@@ -32,5 +43,5 @@ html, body {
   position: absolute;
   background: #fff;
   top: 0;
-  left: 50%;
+  left: 0;
 }

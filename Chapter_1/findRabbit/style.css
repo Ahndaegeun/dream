@@ -1,0 +1,23 @@
+body {
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  margin-bottom: 50px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 24px;  
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: coral;
+  color: #fff;
+}
+
+.btn:hover {
+  background: rgb(255, 99, 42);
+  color: #000;
+}
