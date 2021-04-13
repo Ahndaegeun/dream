@@ -12,11 +12,6 @@ html, body {
 
 .target__wrapper {
   position: absolute;
-  transform: translate(-50%, -50%);
-}
-
-.target {
-  transform: translate(0.5%, 2%);
 }
 
 .sign {
@@ -33,8 +28,6 @@ html, body {
   height: 1px;
   position: absolute;
   background: #fff;
-  top: 0;
-  left: 0;
 }
 
 .vertical-line {
@@ -42,6 +35,4 @@ html, body {
   height: 100vh;
   position: absolute;
   background: #fff;
-  top: 0;
-  left: 0;
 }
